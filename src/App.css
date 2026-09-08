@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #070b14;
+  --color-sidebarbg: #050810;
+  --color-card: #0f1526;
+  --color-tooltipbg: #0c1120;
+  --color-border: #1c2740;
+  --color-cyan: #22d3ee;
+  --color-violet: #a855f7;
+  --color-text: #e6f1f5;
+  --color-muted: #7c93a8;
+  --color-gold: #c9962c;
+  --color-green: #4ade80;
+  --color-pink: #f472b6;
+
+  --font-body: "Inter", sans-serif;
+  --font-serif: "Source Serif 4", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--color-navy);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+.animate-drift { animation: drift 5s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(34,211,238,0.25), 0 0 60px rgba(168,85,247,0.15); }
+  50% { box-shadow: 0 0 45px rgba(34,211,238,0.4), 0 0 90px rgba(168,85,247,0.28); }
+}
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift, .animate-pulse-glow { animation: none; }
+}
